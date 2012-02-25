@@ -1,20 +1,25 @@
+$full-width: 710px;
+$background-color: #cff;
+$link-color: #09c;
+$vis-link-col: #069;
+
 .container {
-	width:710px;
+	width: $full-width;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 body {
-	background:#cff;
+	background: $background-color;
 }
 
 header {
 	padding-top:20px;
-}
 
-header img {
-	padding:1em;
-	background:white;
+	img {
+		padding:1em;
+		background:white;
+	}
 }
 
 section {
@@ -31,17 +36,18 @@ section h1 {
 /* Links */
 
 a {
-	color:#09c;
+	color: $link-color;
 	text-decoration:none;
-}
 
-a:hover {
-	color:#069;
-	text-decoration:underline;
-}
 
-a:visited {
-	color:#069;
+	&:hover {
+		color: $vis-link-col;
+		text-decoration:underline;
+	}
+
+	&:visited {
+		color: $vis-link-col;
+	}
 }
 
 /* Navigation */
@@ -69,7 +75,7 @@ nav ul li a {
 }
 
 nav ul li a:visited {
-	color: #09c;
+	color:  $link-color;
 }
 
 nav ul li a:hover {
@@ -92,7 +98,7 @@ a.signup_button {
 footer {
 	text-align:center;
 	margin-top: 10px;
-	width: 710px;
+	width:  $full-width;
 	margin-left: auto;
 	margin-right: auto;
 }
