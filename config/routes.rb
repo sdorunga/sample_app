@@ -4,6 +4,9 @@ SampleApp::Application.routes.draw do
   match '/help', to: 'static_pages#help' #matches localhost/help url to point to the help method of static_pages controller
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+#also creates two helpers root_path which gives '\' and everything after and route_url whcih gives the full url
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
