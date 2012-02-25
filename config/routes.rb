@@ -1,4 +1,8 @@
 SampleApp::Application.routes.draw do
+  get "users/new"
+  
+  match '/signup', to: 'users#new'
+
   root to: 'static_pages#home' #points localhost/ to static_pages's home controller
 
   match '/help', to: 'static_pages#help' #matches localhost/help url to point to the help method of static_pages controller
