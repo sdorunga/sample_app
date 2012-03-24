@@ -2,17 +2,17 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
-  <%= render 'layouts/stylesheets' %>
+  <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<div class="container">
+	<body>
 		<%= render 'layouts/header' %>
-		<section class="round">
+		<div class="container">
 			<%= yield %>
-		</section>
 		<%= render 'layouts/footer' %>
-	</div>
-</body>
+		<%= debug(params) if Rails.env.development? %> 
+		<!-- creates debugging at the end of the page if the environment is development-->
+		</div>
+	</body>
 </html>
