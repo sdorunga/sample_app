@@ -11,6 +11,7 @@ group :development, :test do
 	gem 'rspec-rails', '2.8.1'
 	gem 'guard-rspec', '0.6.0'
   gem 'annotate', '>= 2.4.1.beta'
+  gem 'factory_girl_rails', '1.4.0' # domain specific language designed to make simpler use of activerecords
 end
 
 

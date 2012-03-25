@@ -1,6 +1,6 @@
 SampleApp::Application.routes.draw do
-  get "users/new"
-  
+ 
+  resources :users #creates a link to users paths and also adds RESTful actions like CRUD
   match '/signup', to: 'users#new'
 
   root to: 'static_pages#home' #points localhost/ to static_pages's home controller
