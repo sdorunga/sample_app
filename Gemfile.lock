@@ -78,8 +78,8 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.1.0)
-    mysql2 (0.3.11-x86-mingw32)
     nokogiri (1.5.0-x86-mingw32)
+    pg (0.12.2-x86-mingw32)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.1)
@@ -163,7 +163,7 @@ DEPENDENCIES
   factory_girl_rails (= 1.4.0)
   guard-rspec (= 0.6.0)
   jquery-rails (= 2.0.0)
-  mysql2 (~> 0.3.7)
+  pg (= 0.12.2)
   rails
   railties (= 3.2.2)
   rb-fchange (= 0.0.5)
