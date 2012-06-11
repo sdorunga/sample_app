@@ -8,7 +8,7 @@ def create
 	if user && user.authenticate(params[:session][:password])
 	#checks both if the user exists(is non-nill) and uses the authenticate method from has_secure_password which returns true or false
 		sign_in user
-		redirect_to user
+		redirect_back_or user #changed from redirect_to
 	else
 		flash.now[:error] = "Invalid email/password combination!"
 		#use flasn.now instead of just flash because simple flash
