@@ -12,6 +12,7 @@
 class User < ActiveRecord::Base
 	attr_accessible :name, :email, :password, :password_confirmation
 	has_secure_password #works with password_digest column if it exists in the table
+	has_many :microposts, dependent: :destroy
 	before_save :create_remember_token
 	#uses create_remember_token on the user due to "self" rather than creating a local variable
 	validates :name, presence: true, length: { maximum: 50 }

@@ -9,4 +9,9 @@ FactoryGirl.define do
 			admin true
 		end
 	end
+
+	factory :micropost do
+		content "Lorem ipsum"
+		user #automatically associates the content with the user; allows for FactoryGirl.create(:micropost, user: @user, created_at: 1.day.ago)
+	end
 end

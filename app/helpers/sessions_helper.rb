@@ -21,6 +21,15 @@ module SessionsHelper
 		user == current_user
 	end
 
+	def signed_in_user
+      unless signed_in?
+        store_location #session helper to remember page attempted before loging in
+        redirect_to signin_path, notice: "Please sign in." unless signed_in? #notice: is used instead of flash[:notice]= and passes
+        #an option hash to redirect_to.(works for :error too, but not :success). This function redirects the user to the signin page
+        #unless he is signed in. Thus it ensures authorization.
+      end
+    end
+
 	def sign_out
 		current_user = nil
 		cookies.delete(:remember_token)
