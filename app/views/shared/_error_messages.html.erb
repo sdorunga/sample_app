@@ -1,12 +1,12 @@
-<% if @user.errors.any? %> 
+<% if object.errors.any? #changed @user to object%> 
 <% #any? is the opposite of empty? returns, true if there is something in the array, false otherwise.%> 
 	<div id="error_explanation">
 		<div class="alert alert-error">
-			The form contains <%= pluralize(@user.errors.count, "error") %>
+			The form contains <%= pluralize(object.errors.count, "error") %>
 			<% #pluralize, gives the right pluralization of the second argument, according to the number of the first argument. %>
 		</div>
 		<ul>
-			<% @user.errors.full_messages.each do |msg| %>
+			<% object.errors.full_messages.each do |msg| %>
 				<li>* <%= msg %></li>
 			<% end %>
 		</ul>
