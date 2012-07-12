@@ -1,9 +1,14 @@
 SampleApp::Application.routes.draw do
  
-  resources :users #creates a link to users paths and also adds RESTful actions like CRUD
+  resources :users do #creates a link to users paths and also adds RESTful actions like CRUD
+    member do #makes the route respond to URIs containing the user id : /users/1/followers and /users/1/following
+      get :following, :followers
+    end#it could have been collection in which case it does it without the id: /users/followers and /users/following
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
-  
+  resources :relationships, only: [:create, :destroy]
+
   match '/signup', to: 'users#new'
 
   match 'signin', to: 'sessions#new'
